@@ -15,7 +15,7 @@ namespace Ambev.DeveloperEvaluation.Domain.Entities
         public Guid BranchId { get; set; }
         public string BranchName { get; set; }
 
-        public decimal TotalAmount { get; set; }
+        public decimal TotalAmount => Items.Sum(i => i.TotalAmount);
         public bool IsCancelled { get; set; }
 
         public List<SaleItem> Items { get; set; } = new List<SaleItem>();
